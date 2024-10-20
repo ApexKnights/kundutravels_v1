@@ -1,0 +1,94 @@
+@import "../../../Sass/mixin";
+@import "../../../Sass/var";
+
+.tourcard {
+  width: 400px;
+  min-height: 500px;
+  background-color: $background2;
+  border-radius: 20px;
+  position: relative;
+  @media (max-width: 960px) {
+    width: 80%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  .img-sec {
+    min-height: 250px;
+    position: relative;
+    @include flexbox(center, row, 0px);
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(55%);
+      border-radius: 20px 20px 0px 0px;
+      z-index: 1;
+    }
+    .contents {
+      position: relative;
+      color: #fff;
+      z-index: 2;
+      span {
+        font-weight: 500;
+        color: $background4;
+        @media (max-width: 425px) {
+          font-size: 13px;
+        }
+      }
+      h1 {
+        font-size: 40px;
+        font-weight: 900;
+        @media (max-width: 425px) {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  .detail-sec {
+    padding: 30px;
+    min-height: 350px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    //   justify-content: space-around;
+    gap: 30px;
+    color: #fff;
+    @media (max-width: 425px) {
+      padding: 25px 15px;
+    }
+    .places,
+    .dates,
+    .price,
+    .days {
+      h3 {
+        font-size: 25px;
+        @media (max-width: 425px) {
+          font-size: 18px;
+        }
+      }
+      span {
+        font-weight: 300;
+        font-size: 15px;
+        @media (max-width: 425px) {
+          font-size: 12px;
+        }
+      }
+    }
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      @media (max-width: 425px) {
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+      }
+      .button {
+        @include button($background3, #fff);
+        font-weight: 700;
+      }
+    }
+  }
+}

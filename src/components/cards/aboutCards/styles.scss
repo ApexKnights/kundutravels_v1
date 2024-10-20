@@ -1,0 +1,39 @@
+@import "../../../Sass/mixin";
+@import "../../../Sass/var";
+
+.about-card {
+  width: 25%;
+  min-height: 350px;
+  border-radius: 20px;
+  background-color: $background2;
+  padding: 20px;
+  @include flexbox(start, column, 30px);
+  color: #fff;
+  @media (max-width: 1024px) {
+    width: 35%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  .img {
+    height: 60px;
+    font-size: 50px;
+    color: $background4;
+    @media (max-width: 768px) {
+      height: 45px;
+    }
+  }
+  h2 {
+    font-size: 30px;
+    @media (max-width: 768px) {
+      font-size: 25px;
+    }
+  }
+  span {
+    line-height: 25px;
+    font-weight: 300;
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+}

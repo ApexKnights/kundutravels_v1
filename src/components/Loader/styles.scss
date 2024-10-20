@@ -1,0 +1,19 @@
+@import "../../Sass/mixin";
+@import "../../Sass/var";
+
+.loader {
+  height: 100vh;
+  background-color: $background1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 120px;
+  }
+  h2 {
+    color: #fff;
+    font-weight: 800;
+  }
+}

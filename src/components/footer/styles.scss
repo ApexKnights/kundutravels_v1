@@ -1,0 +1,78 @@
+@import "../../Sass/mixin";
+@import "../../Sass/var";
+
+.footer {
+  min-height: 30vh;
+  background-color: $background2;
+  padding: 20px 60px;
+  @media (max-width: 768px) {
+    padding: 20px 20px;
+  }
+  .footer1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 30vh;
+    padding-bottom: 20px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .info1,
+    .info2,
+    .contact {
+      width: 30%;
+      height: 100%;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+    .info1 {
+      @include flexbox(start, column, 20px);
+      color: #fff;
+      p {
+        line-height: 30px;
+      }
+      img {
+        height: 120px;
+      }
+    }
+    .info2 {
+      @include flexbox(center, column, 20px);
+      @media (max-width: 768px) {
+        align-items: start;
+      }
+      .link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+        &:hover {
+          color: $background4;
+        }
+      }
+    }
+    .contact {
+      @include flexbox(center, column, 20px);
+      @media (max-width: 768px) {
+        align-items: start;
+      }
+      h2 {
+        color: $background4;
+      }
+
+      span {
+        color: #fff;
+      }
+    }
+  }
+  .footer2 {
+    padding-top: 20px;
+    border-top: 1px solid $background4;
+    text-align: center;
+    color: #fff;
+    @media (max-width: 768px) {
+      font-size: 13px;
+    }
+  }
+}

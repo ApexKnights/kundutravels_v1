@@ -1,0 +1,79 @@
+@import "../../../Sass/mixin";
+@import "../../../Sass/var";
+
+.img-card,
+.img-card-full {
+  width: 30%;
+  min-height: 400px;
+  position: relative;
+  border-radius: 20px;
+  @include flexbox(center, row, 0px);
+  @media (max-width: 1024px) {
+    width: 45%;
+    min-height: 350px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    min-height: 500px;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  .contents {
+    padding: 0px 30px;
+    @include flexbox(start, column, 15px);
+    display: none;
+    color: #fff;
+    z-index: 1;
+    h3 {
+      font-size: 35px;
+      @media (max-width: 1124px) {
+        font-size: 30px;
+      }
+    }
+    span {
+      padding-left: 30px;
+      border-left: 8px solid $background3;
+      @media (max-width: 1124px) {
+        font-size: 14px;
+      }
+    }
+    .button {
+      @include glassbutton;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    img {
+      filter: brightness(30%);
+    }
+    .contents {
+      display: flex;
+    }
+  }
+}
+
+.img-card-full {
+  width: 100%;
+  .contents {
+    @include flexbox(center, column, 15px);
+    display: none;
+    span {
+      padding: 0;
+      border: 0;
+    }
+  }
+  &:hover {
+    .contents {
+      display: flex;
+    }
+  }
+}

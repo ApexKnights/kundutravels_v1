@@ -1,0 +1,131 @@
+@import "../../Sass/mixin";
+@import "../../Sass/var";
+
+.about {
+  .hero {
+    min-height: 80vh;
+    background: linear-gradient(#00000085, #00000071),
+      url("../../images/consult.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include flexbox(center, row, 0px);
+    @media (max-width: 500px) {
+      min-height: 70vh;
+    }
+    .intro {
+      span {
+        font-size: 25px;
+        font-weight: 700;
+        color: $background4;
+        @media (max-width: 500px) {
+          font-size: 15px;
+        }
+      }
+      h1 {
+        font-size: 10vh;
+        font-weight: 900;
+        color: #fff;
+        @media (max-width: 500px) {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+  .section1 {
+    min-height: 80vh;
+    background-color: $background1;
+    display: flex;
+    padding: 20px 60px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 30px;
+      padding: $padding-responsive;
+    }
+    .left,
+    .right {
+      width: 50%;
+      @include flexbox(start, column, 20px);
+      color: #fff;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      .head {
+        span {
+          font-size: 16px;
+          font-weight: 700;
+          color: $background4;
+          @media (max-width: 500px) {
+            font-size: 15px;
+          }
+        }
+        h1 {
+          font-size: 50px;
+          font-weight: 900;
+          color: #fff;
+          @media (max-width: 500px) {
+            font-size: 35px;
+          }
+        }
+      }
+      .intro-para {
+        width: 80%;
+        font-size: 18px;
+        line-height: 35px;
+        padding-left: 30px;
+        border-left: 8px solid $background4;
+        @media (max-width: 500px) {
+          font-size: 15px;
+          line-height: normal;
+          padding-left: 20px;
+          border-left: 4px solid $background4;
+          width: 90%;
+        }
+      }
+      img {
+        height: 80%;
+        width: 70%;
+        object-fit: cover;
+        border-radius: 20px;
+        @media (max-width: 768px) {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    .right {
+      align-items: end;
+    }
+  }
+  .section2 {
+    min-height: 80vh;
+    background-color: $background1;
+    padding: 20px 60px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 30px;
+      padding: $padding-responsive;
+    }
+    .head-why-us {
+      text-align: center;
+      padding-bottom: 30px;
+      span {
+        font-size: 15px;
+        font-weight: 600;
+        color: $background4;
+      }
+      h1 {
+        font-size: 50px;
+        color: #fff;
+        font-weight: 900;
+      }
+    }
+    .about-cards {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  }
+}

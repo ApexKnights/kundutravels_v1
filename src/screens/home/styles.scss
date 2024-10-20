@@ -1,0 +1,322 @@
+@import "../../Sass/mixin";
+@import "../../Sass/var";
+
+.home {
+  position: relative;
+  .socials {
+    @include flexbox(center, column, 30px);
+    padding: 40px 16px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 50%;
+    z-index: 1;
+    right: 2%;
+    .sco-icon {
+      font-size: 25px;
+      color: #fff;
+    }
+  }
+  .hero {
+    min-height: 90vh;
+    position: relative;
+    @include flexbox(start, column, 30px);
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+    .vid-bg {
+      @include Videobg;
+      filter: brightness(50%);
+      background-position: center;
+    }
+    .hero-contents {
+      padding-left: 60px;
+      @media (max-width: 768px) {
+        padding: $padding-responsive;
+      }
+      @include flexbox(start, column, 30px);
+      color: #fff;
+      @media (max-width: 768px) {
+        align-items: center;
+      }
+      h1 {
+        font-size: 70px;
+        @media (max-width: 1024px) {
+          font-size: 50px;
+        }
+        @media (max-width: 768px) {
+          font-size: 50px;
+          text-align: center;
+        }
+        @media (max-width: 425px) {
+          font-size: 30px;
+          text-align: center;
+        }
+      }
+      p {
+        width: 50%;
+        line-height: 25px;
+        padding-left: 30px;
+        border-left: 10px solid $background3;
+        @media (max-width: 1024px) {
+          font-size: 15px;
+        }
+        @media (max-width: 768px) {
+          padding: 0;
+          border: none;
+          width: 100%;
+          text-align: center;
+        }
+      }
+      .button {
+        @include button($background3, #fff);
+      }
+    }
+  }
+  .gallery-section {
+    min-height: 70vh;
+    background-color: $background1;
+    padding: 40px 60px;
+    @media (max-width: 768px) {
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 60px;
+      color: $background4;
+      font-weight: $font-bold;
+      text-align: center;
+      padding-bottom: 30px;
+      @media (max-width: 500px) {
+        font-size: 40px;
+      }
+    }
+    .img-sec1 {
+      width: 100%;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      @media (max-width: 1024px) {
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .img-sec2 {
+      margin-bottom: 40px;
+    }
+    .butt-sec {
+      text-align: center;
+      .button {
+        @include button($background3, #fff);
+      }
+    }
+  }
+
+  .about-sec {
+    background: $background1;
+    min-height: 80vh;
+    padding: $padding-default;
+    display: flex;
+    padding-bottom: 40px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: $padding-responsive;
+      gap: 50px;
+    }
+    .left,
+    .right {
+      width: 50%;
+      @include flexbox(start, column, 25px);
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      h2 {
+        font-size: 50px;
+        color: #fff;
+        @media (max-width: 500px) {
+          font-size: 30px;
+        }
+      }
+      .sub-head {
+        color: #fff;
+        font-size: 18px;
+        padding-right: 30px;
+      }
+      .whyus {
+        @include flexbox(start, column, 18px);
+        color: #fff;
+        padding-top: 30px;
+        h3 {
+          font-size: 40px;
+          @media (max-width: 500px) {
+            font-size: 30px;
+          }
+        }
+        .whyus-detail {
+          @include flexbox(start, row, 10px);
+          width: 80%;
+          @media (max-width: 500px) {
+            width: 100%;
+          }
+          .icon {
+            font-size: 30px;
+          }
+          p {
+            font-size: 17px;
+            width: 100%;
+          }
+        }
+      }
+      img {
+        width: 80%;
+        height: 70%;
+        border-radius: 20px;
+        @media (max-width: 768px) {
+          height: 80%;
+          width: 100%;
+        }
+      }
+    }
+    .right {
+      align-items: end;
+      @media (max-width: 768px) {
+        align-items: start;
+      }
+    }
+  }
+
+  .consult-section {
+    min-height: 100vh;
+    background: linear-gradient(#00000088, #000000b2),
+      url("../../images/consult.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 30px 60px;
+    display: flex;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 40px;
+      padding: 30px 20px;
+    }
+    .left,
+    .right {
+      width: 50%;
+      min-height: 100vh;
+      @include flexbox(start, column, 25px);
+      color: #fff;
+      @media (max-width: 768px) {
+        width: 100%;
+        min-height: auto;
+      }
+    }
+    .left {
+      h1 {
+        font-size: 60px;
+        width: 80%;
+        @media (max-width: 1024px) {
+          font-size: 40px;
+        }
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+        @media (max-width: 500px) {
+          font-size: 30px;
+        }
+      }
+      p {
+        width: 90%;
+        line-height: 30px;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+      }
+      .link {
+        @include button($background3, #fff);
+        text-align: center;
+      }
+    }
+    .right {
+      align-items: end;
+      @media (max-width: 768px) {
+        align-items: start;
+      }
+    }
+  }
+
+  .contactus {
+    background: $background1;
+    min-height: 80vh;
+    display: flex;
+    padding: $padding-default;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 30px;
+      padding: 30px 20px;
+    }
+    .left {
+      width: 50%;
+      @include flexbox(center, row, 20px);
+      // justify-content: end;
+      color: #fff;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      .kundu-map {
+        width: 60%;
+        height: 80%;
+        border-radius: 20px;
+        @media (max-width: 768px) {
+          width: 100%;
+          min-height: 40vh;
+        }
+      }
+    }
+    .right {
+      width: 50%;
+      @include flexbox(start, column, 25px);
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      color: #fff;
+      .head {
+        span {
+          color: $background4;
+          font-size: 18px;
+          @media (max-width: 425px) {
+            font-size: 12px;
+          }
+        }
+        h2 {
+          font-size: 60px;
+          @media (max-width: 425px) {
+            font-size: 40px;
+          }
+        }
+      }
+      .contact-info {
+        @include flexbox(start, column, 25px);
+        .info {
+          @include flexbox(start, row, 10px);
+          font-size: 25px;
+          @media (max-width: 425px) {
+            font-size: 15px;
+          }
+          .info-icon {
+            @media (max-width: 425px) {
+              font-size: 20px;
+            }
+            font-size: 30px;
+            color: $background4;
+          }
+        }
+      }
+    }
+  }
+}
