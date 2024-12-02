@@ -4,8 +4,10 @@ import { tours } from '../../../data/pagesdata'
 import toast from 'react-hot-toast';
 import axios from "axios"
 import { server } from '../../../main';
+import { ThreeCircles } from 'react-loader-spinner';
 
 const TourForm = () => {
+    const [loading, setLoading] = useState(false)
     const tour = tours.map((e) => e.place);
     console.log(tour)
     const [tourname, setTourName] = useState('')
@@ -15,6 +17,7 @@ const TourForm = () => {
     const handleFormSubmit = async () => {
         // console.log(tourname, email, name, phone)
         try {
+            setLoading(true)
             const res = await axios.post(`${server}/tourenquiry`, {
                 name,
                 email,
@@ -22,8 +25,10 @@ const TourForm = () => {
                 tourname
             }, { withCredentials: true })
             toast.success("Message Has been sent successfully")
+            setLoading(false)
         } catch (error) {
             toast.error("Message Has not sent, try again later")
+            setLoading(false)
         }
     }
     return (
@@ -41,7 +46,15 @@ const TourForm = () => {
                 <input type="text" placeholder='Enter Your Name' onChange={(e) => setName(e.target.value)} />
                 <input type="email" placeholder='Enter Your Email' onChange={(e) => setEmail(e.target.value)} />
                 <input type="number" placeholder='Enter Your Phone Number' onChange={(e) => setPhone(e.target.value)} />
-                <button onClick={handleFormSubmit}>Submit</button>
+                {loading ? <ThreeCircles
+                    visible={true}
+                    height="40"
+                    width="40"
+                    color="#FEAD08"
+                    ariaLabel="three-circles-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                /> : <button onClick={handleFormSubmit}>Submit</button>}
             </div>
             <h3>Or</h3>
             <a href="https://wa.me/919433221221">WhatsApp</a>
